@@ -134,10 +134,13 @@ input:focus {
   left: calc(50vw - 137px / 2);
 }
 .ball {
+  width: 80px;
+  height: 80px;
   position: fixed;
   top: calc(50vh - 80px / 2); 
   left: calc(50vw - 80px / 2);
   cursor: pointer;
+  background-color: transparent;
 }
 
 .ball:active {
