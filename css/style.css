@@ -141,6 +141,8 @@ input:focus {
   left: calc(50vw - 80px / 2);
   cursor: pointer;
   background-color: var(--c-background);
+  background: url('/img/football.webp') no-repeat;
+  background-size: contain;
 }
 .bounce {
   transition: all 0.1s ease;
