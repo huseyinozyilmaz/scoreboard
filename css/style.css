@@ -145,3 +145,15 @@ input:focus {
   transition: all 0.1s ease;
   transform: scale(1.1, 1) translateY(-50px);
 }
+
+.version {
+  /* color: var(--c-background); */
+  opacity: 0.1;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  right: 0px;
+  font-size: 10px;
+  font-family: var(--font-family-mono);
+}
