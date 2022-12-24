@@ -49,11 +49,11 @@ function setPlayerName(player, name) {
 }
 
 function onResetBtnClick(btn) {
+  resetScores()
   btn.classList.add('bounce')
   setTimeout(function() {
     btn.classList.remove('bounce')
   }, 100)
-  resetScores()
 }
 
 function resetScores() {
