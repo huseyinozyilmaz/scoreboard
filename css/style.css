@@ -140,6 +140,7 @@ input:focus {
   top: calc(50vh - 80px / 2); 
   left: calc(50vw - 80px / 2);
   cursor: pointer;
+  background-color: var(--c-background);
 }
 .bounce {
   transition: all 0.1s ease;
@@ -147,7 +148,6 @@ input:focus {
 }
 
 .version {
-  /* color: var(--c-background); */
   opacity: 0.1;
   text-align: center;
   position: fixed;
