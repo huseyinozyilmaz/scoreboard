@@ -25,10 +25,6 @@ body {
   font-size: 16px;
   color: var(--c-text);
 }
-input:focus {
-  outline: none;
-  border: 2px solid var(--c-brand);
-}
 .screen {
   height: 100vh;
 }
@@ -46,12 +42,13 @@ input:focus {
 }
 .score-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   font-weight: 300;
   letter-spacing: 2px;
   padding-top: 2rem;
   text-transform: uppercase;
-  color: var(--c-gray);
+  color: var(--c-brand);
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .score-box {
@@ -76,13 +73,19 @@ input:focus {
   text-align: center;
 }
 .name-box input {
-  background-color: #333;
+  background-color: var(--c-amber);
+  border: 2px solid var(--c-amber);
   border-radius: 16px;
   font-size: 2.75rem;
   text-align: center;
   width: 50%;
-  color: #fff;
+  color: var(--c-background);
   letter-spacing: 3px;
+}
+.name-box input:focus {
+  outline: none;
+  border-color: #fff;
+  background-color: var(--c-green);
 }
 .btn {
   position: fixed;
@@ -95,30 +98,13 @@ input:focus {
   font-size: 2.25rem;
   line-height: 2.25rem;
 }
-.btn.green {
-  background-color: var(--c-green);
-}
-.btn.green:active {
-  background-color: var(--c-green-darker);
-}
 .btn.red {
   background-color: var(--c-red);
+  opacity: 0.3;
 }
 .btn.red:active {
   background-color: var(--c-red-darker);
-}
-.btn.gray {
-  background-color: var(--c-gray);
-}
-.btn.gray:active {
-  background-color: var(--c-gray-darker);
-}
-.btn.amber {
-  background-color: var(--c-amber);
-  color: #333;
-}
-.btn.amber:active {
-  background-color: var(--c-amber-darker);
+  opacity: 1;
 }
 .no-select {
   -webkit-touch-callout: none;
