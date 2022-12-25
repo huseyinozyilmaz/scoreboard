@@ -23,3 +23,6 @@ Ahmed designed the board and laid down the requirements. Ability to pick your fa
 ![Scoreboard Design](https://github.com/huseyinozyilmaz/scoreboard/blob/main/img/design.webp?raw=true)
 
 We built this Scoreboard for all parents who love ❤️ in-house football | soccer ⚽️. Enjoy your game 😊!
+
+## Limitations
+* Only supports landscape mode on iPad and other tablets with similar size (not tested).
