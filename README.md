@@ -26,3 +26,5 @@ We built this Scoreboard for all parents who love ❤️ in-house football | soc
 
 ## Limitations
 * Only supports landscape mode on iPad and other tablets with similar size (not tested).
+* Only two players supported
+* 12 avatars
