@@ -1,3 +1,12 @@
+
+const context = new AudioContext()
+
+const SOUND = {
+  up: null,
+  down: null,
+  reset: null
+}
+
 const defaultAvatar = "/img/avatars/default.webp"
 const avatars = [
   defaultAvatar,
@@ -17,6 +26,7 @@ const avatars = [
 const zeroPad = (num, places) => String(num).padStart(places, '0')
 
 function scoreUp(player) {
+  play(SOUND.up)
   const currentScore = getCurrentScoreByPlayer(player)
   const newScore = currentScore + 1
   if (newScore < 100) {
@@ -25,6 +35,7 @@ function scoreUp(player) {
 }
 
 function scoreDown(player) {
+  play(SOUND.down)
   const currentScore = getCurrentScoreByPlayer(player)
   const newScore = currentScore - 1
   if (newScore >= 0) {
@@ -49,6 +60,7 @@ function setPlayerName(player, name) {
 }
 
 function onResetBtnClick(btn) {
+  play(SOUND.reset)
   resetScores()
   btn.classList.add('bounce')
   setTimeout(function() {
@@ -90,15 +102,67 @@ function setAvatar(player, avatar) {
   document.getElementById(`avatar${player}`).src = avatar
 }
 
-function initLocalStorage (...players) {
+function onSoundBtnClick(btn) {
+  const oldPref = isSoundOn()
+  const newPref = !oldPref
+  saveSoundPreference(newPref)
+  setSoundButton(btn, newPref)
+}
+
+function resetSoundButton(btn) {
+  btn.classList.remove('off')
+  btn.classList.remove('on')
+}
+
+function setSoundButton(btn, soundPreference) {
+  resetSoundButton(btn)
+  if (soundPreference) {
+    btn.classList.add('on')
+  } else {
+    btn.classList.add('off')
+  }
+}
+
+function isSoundOn() {
+  return localStorage.getItem('sound') !== null ? JSON.parse(localStorage.getItem('sound')) : false
+}
+
+function saveSoundPreference(soundPreference) {
+  localStorage.setItem('sound', JSON.stringify(soundPreference))
+}
+
+function play(audioBuffer) {
+  if (isSoundOn()) {
+    const source = context.createBufferSource()
+    source.buffer = audioBuffer
+    source.connect(context.destination)
+    source.start()
+  }
+}
+
+function initAudio() {
+  Object.keys(SOUND).map(key => {
+    window.fetch(`/sounds/${key}.mp3`)
+    .then(response => response.arrayBuffer())
+    .then(arrayBuffer => context.decodeAudioData(arrayBuffer))
+    .then(audioBuffer => {
+      SOUND[key] = audioBuffer
+    })
+  })
+}
+
+function initLocalStorage(...players) {
   players.map(player => {
     if (localStorage.getItem(player) === null) {
       localStorage.setItem(player, JSON.stringify({ name: '', score: 0, avatar: defaultAvatar}))
     }
   })
+  if (localStorage.getItem('sound') === null) {
+    localStorage.setItem('sound', JSON.stringify(false))
+  }
 }
 
-function loadPlayers(...players) {
+function loadPlayers (...players) {
   players.map(player => {
     const loadedPlayer = JSON.parse(localStorage.getItem(player))
     setPlayerName(player, loadedPlayer.name)
@@ -109,7 +173,13 @@ function loadPlayers(...players) {
   })
 }
 
+function loadSettings() {
+  setSoundButton(document.getElementById('btnSound'), isSoundOn())
+}
+
 function onLoad() {
   initLocalStorage('A', 'B')
+  initAudio()
   loadPlayers('A', 'B')
+  loadSettings()
 }

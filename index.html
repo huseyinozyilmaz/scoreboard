@@ -7,16 +7,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="Keep track of your points scored in your family football games!"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png?v=2.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png?v=2.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png?v=2.0">
-  <link rel="manifest" href="/img/icons/site.webmanifest?v=2.0">
-  <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg?v=2.0" color="#222222">
-  <link rel="shortcut icon" href="/img/icons/favicon.ico?v=2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png?v=760ce3a">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png?v=760ce3a">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png?v=760ce3a">
+  <link rel="manifest" href="/img/icons/site.webmanifest?v=760ce3a">
+  <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg?v=760ce3a" color="#222222">
+  <link rel="shortcut icon" href="/img/icons/favicon.ico?v=760ce3a">
   <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="msapplication-config" content="/img/icons/browserconfig.xml?v=2.0">
+  <meta name="msapplication-config" content="/img/icons/browserconfig.xml?v=760ce3a">
   <meta name="theme-color" content="#222222">
-  <link rel="stylesheet" href="/css/style.css?v2.0">
+  <link rel="stylesheet" href="/css/style.css?v=760ce3a">
   <title>Scoreboard | Football</title>
 </head>
 <body onload="onLoad()">
@@ -51,12 +51,13 @@
         </div>
       </div>
     </div>
-    <button onclick="scoreDown('A')" class="btn red" style="bottom: 30px; left: 30px">-</button>
-    <button onclick="scoreDown('B')" class="btn red" style="bottom: 30px; right:30px">-</button>
+    <button onclick="scoreDown('A');" class="btn red" style="bottom: 30px; left: 30px">-</button>
+    <button onclick="scoreDown('B');" class="btn red" style="bottom: 30px; right:30px">-</button>
     <img src="/img/vs.webp" class="vs" alt="vs" width="90" height="137">
-    <button onclick="onResetBtnClick(this)" class="ball"></button>
-    <div class="version">V2.0</div>
+    <button id="btnBall" class="ball" onclick="onResetBtnClick(this)"></button>
+    <button id="btnSound" class="sound off" onclick="onSoundBtnClick(this)" role="switch"></button>
+    <div class="version">760ce3a</div>
   </div>
-  <script src="/js/app.js?v2.0"></script>
+  <script src="/js/app.js?v=760ce3a"></script>
 </body>
 </html>
