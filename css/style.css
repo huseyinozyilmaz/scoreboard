@@ -22,7 +22,6 @@
 html {
   height  : 100%;
   overflow: hidden;
-  position: relative;
 }
 body {
   background-color: var(--c-background);
@@ -37,10 +36,11 @@ button {
   color: #fff;
 }
 button:active {
+  background-color: var(--c-background);
   color: var(--c-gray);
 }
 .screen {
-  height: 100vh;
+  height: 100%;
 }
 .col {
   display: flex;

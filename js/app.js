@@ -131,6 +131,11 @@ function saveSoundPreference(soundPreference) {
   localStorage.setItem('sound', JSON.stringify(soundPreference))
 }
 
+function toFixScreen() {
+  window.scrollTo(document.body.scrollLeft, document.body.scrollTop)
+  document.body.style.overflow = 'hidden'
+}
+
 function play(audioBuffer) {
   if (isSoundOn()) {
     const source = context.createBufferSource()
