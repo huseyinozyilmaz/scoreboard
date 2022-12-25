@@ -188,6 +188,7 @@ document.addEventListener('focusout', function(e) {
   window.scrollTo(0, 0)
   document.body.style.overflow = 'hidden'
   document.body.style.height = '100vh'
+  document.body.style.position = 'fixed'
   document.documentElement.style.overflow = 'hidden'
   document.documentElement.style.height = '100vh'
 })
