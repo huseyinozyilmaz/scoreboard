@@ -134,6 +134,9 @@ function saveSoundPreference(soundPreference) {
 function toFixScreen() {
   window.scrollTo(document.body.scrollLeft, document.body.scrollTop)
   document.body.style.overflow = 'hidden'
+  document.body.style.height = '100%'
+  document.documentElement.style.overflow = 'hidden'
+  document.documentElement.style.height = '100%'
 }
 
 function play(audioBuffer) {
