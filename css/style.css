@@ -70,10 +70,11 @@ button:active {
   justify-content: center;
 }
 .score {
+  display: block;
   font-size: 350px;
+  font-weight: 600;
   line-height: 400px;
   font-family: var(--font-family-mono);
-  cursor: pointer;
 }
 .avatar {
   display: flex;

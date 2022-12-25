@@ -7,16 +7,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="Keep track of your points scored in your family football games!"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png?v=73052ee">
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png?v=73052ee">
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png?v=73052ee">
-  <link rel="manifest" href="/site.webmanifest?v=73052ee">
-  <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg?v=73052ee" color="#222222">
-  <link rel="shortcut icon" href="/img/icons/favicon.ico?v=73052ee">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png?v=1201140">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png?v=1201140">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png?v=1201140">
+  <link rel="manifest" href="/site.webmanifest?v=1201140">
+  <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg?v=1201140" color="#222222">
+  <link rel="shortcut icon" href="/img/icons/favicon.ico?v=1201140">
   <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="msapplication-config" content="/img/icons/browserconfig.xml?v=73052ee">
+  <meta name="msapplication-config" content="/img/icons/browserconfig.xml?v=1201140">
   <meta name="theme-color" content="#222222">
-  <link rel="stylesheet" href="/css/style.css?v=73052ee">
+  <link rel="stylesheet" href="/css/style.css?v=1201140">
   <title>Scoreboard | Football</title>
 </head>
 <body onload="onLoad()">
@@ -29,9 +29,7 @@
     <div class="row">
       <div class="col">
         <div class="score-box">
-          <button onclick="scoreUp('A')">
-            <h1 id="scoreA" class="score no-select">00</h1>
-          </button>
+          <button id="scoreA" class="score no-select" onclick="scoreUp('A')">00</button>
         </div>
         <div class="avatar">
           <img id="avatarA" src="/img/avatars/default.webp" width="120" height="120" alt="Player Avatar" onclick="changeAvatar('A', this)">
@@ -43,15 +41,13 @@
 
       <div class="col">
         <div class="score-box">
-          <button  onclick="scoreUp('B')">
-            <h1 id="scoreB" class="score no-select">00</h1>
-          </button>
+          <button id="scoreB" class="score no-select" onclick="scoreUp('B')">00</button>
         </div>
         <div class="avatar">
           <img id="avatarB" src="/img/avatars/default.webp" width="120" height="120" alt="Player Avatar" onclick="changeAvatar('B', this)">
         </div>
         <div class="name-box">
-          <input type="text" id="nameB" placeholder="Player B" oninput="setPlayerName('B', this.value)" onblur="toFixScreen">
+          <input type="text" id="nameB" placeholder="Player B" oninput="setPlayerName('B', this.value)">
         </div>
       </div>
     </div>
@@ -60,8 +56,8 @@
     <img src="/img/vs.webp" class="vs" alt="vs" width="90" height="137">
     <button id="btnBall" class="ball" onclick="onResetBtnClick(this)"></button>
     <button id="btnSound" class="sound off" onclick="onSoundBtnClick(this)" role="switch"></button>
-    <div class="version">v=73052ee</div>
+    <div class="version">v=1201140</div>
   </div>
-  <script src="/js/app.js?v=73052ee"></script>
+  <script src="/js/app.js?v=1201140"></script>
 </body>
 </html>
