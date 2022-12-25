@@ -187,7 +187,7 @@ function onLoad() {
 document.addEventListener('focusout', function(e) { 
   window.scrollTo(0, 0)
   document.body.style.overflow = 'hidden'
-  document.body.style.height = '100%'
+  document.body.style.height = '100vh'
   document.documentElement.style.overflow = 'hidden'
-  document.documentElement.style.height = '100%'
+  document.documentElement.style.height = '100vh'
 })
